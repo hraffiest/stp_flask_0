@@ -13,9 +13,9 @@ def show_daparture(departure):
 	return render_template('departure.html', title=departure, departure=departure)
 
 
-@app.route('/tour/<id>')
-def show_tour(tour):
-	return render_template('tour.html', title=tour, tour=tour)
+@app.route('/tour/<id_tour>')
+def show_tour(id_tour):
+	return render_template('tour.html', title=id_tour, tour=id_tour)
 
 
 if __name__ == '__main__':
