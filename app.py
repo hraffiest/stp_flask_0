@@ -1,4 +1,4 @@
-from flask import Flask,render_template 	# сперва подключим модуль
+from flask import Flask, render_template 	# сперва подключим модуль
 
 app = Flask(__name__) 	# объявим экземпляр фласка
 
