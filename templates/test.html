@@ -1,0 +1,40 @@
+<table>
+  <tr><th>Название</th><th>Жанры</th><th>Рейтинг</th></tr>
+  {% for mov in movies %}
+    <tr>
+      <td>{{ mov.title }} ({{ mov.rutitle }})</td>
+      <td>{% for gen in mov.genres %} {{ gen }}{% endfor %}</td>
+      <td>{{ mov.imdbrate }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+
+<h2> {{ category.title }} </h2>
+<ul>{% for key, value in category.subcategories.items() %}
+  <li>{{ key }} – {{ value }}</li>
+    {% endfor %}
+</ul>
+
+
+
+<ul>
+  {% for air in carriers|sort %}
+  <li>{{ air }}</li>
+{% endfor %}
+</ul>
+
+
+<nav>
+  {% for link in links %}
+    <a href="/{{ link.link }}/">{{ link.title }}</a>
+  {% endfor %}
+</nav>
+
+
+<nav>
+  {% for link in directions %}
+    <a href="/{{ link.link }}/">{{ link.title }}</a>
+  {% endfor %}
+</nav>
