@@ -13,18 +13,10 @@ def show_daparture(departure):
     return render_template('departure.html', title=departure, departure=departure)
 
 
-@app.route('/tour/<id_tour>')
+@app.route('/tour/<int:id_tour>')
 def show_tour(id_tour):
-    tour = None
-    for i in data.tours:
-        # compare url with title from data.py
-        if data.tours[i]['title'].lower() == ' '.join(id_tour.split('-')).lower():
-            tour = data.tours[i]
-    # why here i see the problem "Local variable 'tour' might be referenced before assignment" ???
-    if tour is not None:
-        return render_template('tour.html', title=data.title, tour=tour)
-    else:
-        return '404'
+    tour = data.tours[id_tour]
+    return render_template('tour.html', title=data.title, tour=tour)
 
 
 if __name__ == '__main__':
