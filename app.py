@@ -16,7 +16,18 @@ def show_daparture(departure):
 @app.route('/tour/<int:id_tour>')
 def show_tour(id_tour):
     tour = data.tours[id_tour]
-    return render_template('tour.html', title=data.title, tour=tour)
+    print(tour)
+    from_town = data.departures[tour["departure"]]
+    # correct typo for 'ночь/и/ей'
+    nights = tour['nights']
+    if nights == 1:
+        nights = '1 ночь'
+    elif 4 >= nights % 10 >= 1:
+        nights = '{} ночи'.format(nights)
+    else:
+        nights = '{} ночей'.format(nights)
+
+    return render_template('tour.html', title=tour['title'], tour=tour, departures=from_town, nights=nights)
 
 
 if __name__ == '__main__':
