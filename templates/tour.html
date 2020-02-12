@@ -34,7 +34,7 @@
 
     <!-- HERO -->
 
-    <p class="lead" data-test="lead"><span data-test="country">{{ tour.country }}</span> <span data-text="departure">{{ departures }}</span>
+    <p class="lead" data-test="lead"><span data-test="country">{{ tour.country }}</span> из <span data-text="departure">{{ departures[2:] }}</span>
         на <span data-text="nights">{{ nights }}</span></p>
 
     <img data-test="picture" src="{{ tour.picture }}" class="w-75" alt="">
