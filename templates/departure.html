@@ -11,6 +11,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav" data-test="navigation">
             {% for key,value in departures.items() %}
+            <!--  I think that only here i need an active menu thing with special variable departure(nsk for example)   -->
           <li {% if departure == key %} class ="nav-item active"{% else %} class ="nav-item"{% endif %}>
             <a class="nav-link" href="/departure/{{ key }}" data-test="navlink">{{ value }} </a>
           </li>

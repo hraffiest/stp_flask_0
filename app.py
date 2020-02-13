@@ -20,7 +20,6 @@ def show_daparture(departure):
         if value['departure'] == departure:
             tours_dict[key] = value
     # count of tours for this departure
-    print(tours_dict.values())
     counter = len(tours_dict)
     if counter == 1:
         counter = 'Найден 1 тур'
@@ -34,6 +33,7 @@ def show_daparture(departure):
                            departure=departure,
                            departures=data.departures,
                            from_town=from_town,
+                           title='Туры ' + from_town,
                            tours=tours_dict,
                            counter=counter)
 
@@ -53,7 +53,6 @@ def show_tour(id_tour):
         nights = '{} ночи'.format(nights)
     else:
         nights = '{} ночей'.format(nights)
-
     return render_template('tour.html',
                            title=tour['title'],
                            tour=tour,
