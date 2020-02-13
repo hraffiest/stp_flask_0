@@ -16,7 +16,6 @@ def show_daparture(departure):
 @app.route('/tour/<int:id_tour>')
 def show_tour(id_tour):
     tour = data.tours[id_tour]
-    print(tour)
     from_town = data.departures[tour["departure"]]
     # correct typo for 'ночь/и/ей'
     nights = tour['nights']
