@@ -11,7 +11,7 @@
         <ul class="navbar-nav" data-test="navigation">
             {% for key,value in departures.items() %}
           <li class="nav-item active">
-            <a class="nav-link" href="{{ key }}" data-test="navlink">{{ value }} </a>
+            <a class="nav-link" href="/departure/{{ key }}" data-test="navlink">{{ value }} </a>
           </li>
             {% endfor %}
         </ul>
