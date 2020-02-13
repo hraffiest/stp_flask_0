@@ -5,7 +5,7 @@ app = Flask(__name__) 	# объявим экземпляр фласка
 
 @app.route('/')
 def main():
-    return render_template('index.html', title='Stepik Travel')
+    return render_template('index.html', title='Stepik Travel', departures=data.departures, tour=data.tours)
 
 
 @app.route('/departure/<departure>')
