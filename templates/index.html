@@ -10,9 +10,9 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav" data-test="navigation">
             {% for key,value in departures.items() %}
-          <li class="nav-item active">
-            <a class="nav-link" href="/departure/{{ key }}" data-test="navlink">{{ value }} </a>
-          </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/departure/{{ key }}" data-test="navlink">{{ value }} </a>
+                </li>
             {% endfor %}
         </ul>
       </div>
