@@ -1,23 +1,5 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container mt-3">
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/">Stepik Travel</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-              aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav" data-test="navigation">
-            {% for key,value in departures.items() %}
-                <li class="nav-item">
-                    <a class="nav-link" href="/departure/{{ key }}" data-test="navlink">{{ value }} </a>
-                </li>
-            {% endfor %}
-        </ul>
-      </div>
-    </nav>
 
 
     <h1 class="display-3 mt-4" data-test="title">{{ tour.title }} <br> {% for i in range(tour.stars|int) %} ★ {% endfor %}</h1>
@@ -32,6 +14,5 @@
     <p class="my-4 w-75" data-test="description">{{ tour.description }}</p>
 
     <a href="" class="btn btn-success btn-lg" data-test="buybutton">Купить тур за <span data-test="price">{{ tour.price }}</span></a>
-</div>
 
 {% endblock %}

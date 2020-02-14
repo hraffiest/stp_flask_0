@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     {% if title %}
@@ -10,6 +10,25 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+<div class="container mt-3">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">Stepik Travel</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav" data-test="navigation">
+            {% for key,value in departures.items() %}
+            <!--  I think that only here i need an active menu thing with special variable departure(nsk for example)   -->
+          <li {% if departure == key %} class ="nav-item active"{% else %} class ="nav-item"{% endif %}>
+            <a class="nav-link" href="/departure/{{ key }}" data-test="navlink">{{ value }} </a>
+          </li>
+            {% endfor %}
+        </ul>
+      </div>
+    </nav>
 {% block content %}
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <p>
@@ -25,6 +44,7 @@ Stepic – новые курсы для вас!<br/>
 <a href="/delete" class="btn btn-outline-danger">Удалить</a>
 </p>
 {% endblock %}
+    </div>
 </body>
 </html>
 
