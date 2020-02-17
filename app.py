@@ -6,7 +6,7 @@ app = Flask(__name__) 	# объявим экземпляр фласка
 @app.route('/')
 def main():
     return render_template('index.html',
-                           title='Stepik Travel',
+                           title=data.title,
                            departures=data.departures,
                            tour=data.tours)
 
@@ -22,20 +22,20 @@ def show_daparture(departure):
     # count of tours for this departure
     counter = len(tours_dict)
     if counter == 1:
-        counter = 'Найден 1 тур'
+        counter_line = 'Найден 1 тур'
     elif counter == 11:
-        counter = 'Найдено {} туров'.format(counter)
+        counter_line = 'Найдено {} туров'.format(counter)
     elif 4 >= counter % 10 >= 1:
-        counter = 'Найдено {} тура'.format(counter)
+        counter_line = 'Найдено {} тура'.format(counter)
     else:
-        counter = 'Найдено {} туров'.format(counter)
+        counter_line = 'Найдено {} туров'.format(counter)
     return render_template('departure.html',
                            departure=departure,
                            departures=data.departures,
                            from_town=from_town,
                            title='Туры ' + from_town,
                            tours=tours_dict,
-                           counter=counter)
+                           counter_line=counter_line)
 
 
 @app.route('/tour/<int:id_tour>')

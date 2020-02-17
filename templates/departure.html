@@ -2,7 +2,7 @@
 {% block content %}
 
     <h1 class="display-5 mt-4">Летим из <span data-test="from">{{ from_town[2:] }}</span></h1>
-    <p class="mb-4" ><span data-test="tourcount">{{ counter }}</span>, от <span data-test="pricemin">
+    <p class="mb-4" ><span data-test="tourcount">{{ counter_line }}</span>, от <span data-test="pricemin">
         {{ (tours.values()|min(attribute="price")).price }}</span> до <span data-test="pricemax">
         {{ (tours.values()|max(attribute="price")).price }}</span> и от <span data-test="nightsmax">
         {{ (tours.values()|min(attribute="nights")).nights }}</span> до <span data-test="nightsmax">
