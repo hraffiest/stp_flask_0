@@ -21,6 +21,7 @@ def show_daparture(departure):
             tours_dict[key] = value
     # count of tours for this departure
     counter = len(tours_dict)
+    # correct typo for 'тур/ов/а'
     if counter == 1:
         counter_line = 'Найден 1 тур'
     elif counter == 11:
@@ -45,18 +46,18 @@ def show_tour(id_tour):
     # correct typo for 'ночь/и/ей'
     nights = tour['nights']
     if nights == 1:
-        nights = '1 ночь'
+        nights_line = '1 ночь'
     elif nights == 11:
-        nights = '{} ночей'.format(nights)
+        nights_line = '{} ночей'.format(nights)
     elif 4 >= nights % 10 >= 1:
-        nights = '{} ночи'.format(nights)
+        nights_line = '{} ночи'.format(nights)
     else:
-        nights = '{} ночей'.format(nights)
+        nights_line = '{} ночей'.format(nights)
     return render_template('tour.html',
                            title=tour['title'],
                            tour=tour,
                            from_town=from_town,
-                           nights=nights,
+                           nights=nights_line,
                            departures=data.departures)
 
 
